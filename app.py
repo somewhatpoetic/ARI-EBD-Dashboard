@@ -58,7 +58,7 @@ app.layout = html.Div(
         dcc.Store(
             id="store-data",
             # change storage type back to memory after debugging is complete
-            storage_type="memory",
+            storage_type="session",
         ),
     ]
 )

@@ -24,6 +24,7 @@ app.title = "EDCAD"
 server = app.server
 app.config.suppress_callback_exceptions = True
 
+# All visible contents go here
 app.layout = html.Div(
     id="app-container",
     children=[
@@ -32,12 +33,15 @@ app.layout = html.Div(
             id="banner",
             className="banner",
             children=[
+                # Image & logo. Links to the landing page and erases session data.
                 dcc.Link(
                     children=[
                         html.Img(src=dash.get_asset_url("Antiracism Institute Banner 2.png"))
                     ], 
                     href="/", 
-                    className="orgtitle-pill"),
+                    className="orgtitle-pill"
+                ),
+                # Navigational links ot pages.
                 html.Div(
                     id="navlinks",
                     className="navoptions",
@@ -50,14 +54,16 @@ app.layout = html.Div(
                 )
             ],
         ),
+        # Secondary banner to show meta information from uploaded file.
         html.Div(
             id="secondary-banner",
             className="secondary-banner",
         ),
+        # Page contents from individual page files.
         dash.page_container,
+        # Object that stores uploaded data for use in callbacks across app.
         dcc.Store(
             id="store-data",
-            # change storage type back to memory after debugging is complete
             storage_type="session",
         ),
     ]
@@ -71,13 +77,17 @@ app.layout = html.Div(
     ]
 )
 def display_secondary_banner(contents, filename):
+    """
+    :params: contents: data from uploaded file
+    :params: filename: filename of uploaded file
+
+    :return: html output of years, counts and success rate from file if 
+        file exists.
+    """
     if contents is not None:
         return [
             html.Div(
-            children=[
-                    "File: ",
-                    filename
-                ]
+                children=["File: ", filename]
             ),
             html.Div(
                 className="sb-meta",
@@ -98,17 +108,20 @@ def display_secondary_banner(contents, filename):
             )
         ]
     else:
-        return [html.Div(
-            children=["Please upload a file."])
-        ]
+        return [html.Div(children=["Please upload a file."])]
 
 @app.callback(
     Output("years", "children"),
     Input("store-data", "data")
 )
 def get_years_from_data(data):
-    df = pd.DataFrame(data)
+    """
+    :params: data: uploaded data
 
+    :return: range of years in file
+    """
+
+    df = pd.DataFrame(data)
     years = df["FY"].unique()
 
     if len(years) > 1:
@@ -126,6 +139,12 @@ def get_years_from_data(data):
     [Input("store-data", "data")]
 )
 def get_enrolled_count(data):
+    """
+    :params: data: uploaded data
+
+    :return: counts of students
+    """
+
     df = pd.DataFrame(data)
     return ["Enrolled: ", len(df.index)]
 
@@ -134,10 +153,17 @@ def get_enrolled_count(data):
     [Input("store-data", "data")]
 )
 def get_overall_success_rate(data):
+    """
+    :params: data: uploaded data
+
+    :return: overall course success rate
+    """
+
     df = pd.DataFrame(data)
     counts = df["COURSE_SUCCESS"].value_counts()
     sr = (counts["Course Success"] / df["COURSE_SUCCESS"].count()) * 100
     formatted_sr = "{:.2f}%".format(sr)
+
     return ["Overall Success Rate: ", formatted_sr]
 
 # Run the server

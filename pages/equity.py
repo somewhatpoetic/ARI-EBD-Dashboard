@@ -194,10 +194,10 @@ def create_equity_graph(data, value, threshold, courses, clks, width):
     min_eq = min(main_table["Equity Gap (%)"])
 
     if abs(max_eq) > abs(min_eq):
-        upper_ylim = math.ceil(max_eq) + 2
+        upper_ylim = math.ceil(max_eq) + 4
         lower_ylim = -upper_ylim
     else:
-        lower_ylim = math.floor(min_eq) - 2
+        lower_ylim = math.floor(min_eq) - 4
         upper_ylim = -lower_ylim
     
     fig = px.bar(

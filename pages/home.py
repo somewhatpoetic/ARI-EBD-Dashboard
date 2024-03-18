@@ -93,14 +93,14 @@ layout = html.Div([
                 the country to promote antiracist work.
                 """
             ),
-            html.Br(),
-            html.H4("About the Dashboard"),
-            html.P(
-                """
-                Insert introduction to application and the purpose of each 
-                page. Upload data to begin.
-                """
-            ),
+            # html.Br(),
+            # html.H4("About the Dashboard"),
+            # html.P(
+            #     """
+            #     Insert introduction to application and the purpose of each 
+            #     page. Upload data to begin.
+            #     """
+            # ),
         ]
     ),
 ])

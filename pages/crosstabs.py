@@ -90,10 +90,10 @@ def generate_control_card():
             dcc.Slider(
                 id="figure-width", 
                 min=400, 
-                max=1000, 
+                max=1600, 
                 step=50, 
                 value=950,
-                marks={x: str(x) for x in [400, 500, 600, 700, 800, 900, 1000]},
+                marks={x: str(x) for x in [400, 600, 800, 1000, 1200, 1400, 1600]},
                 className="slider-custom"
             ),
             html.Br(),

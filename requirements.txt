@@ -4,5 +4,4 @@ numpy==1.25.2
 pandas==2.2.1
 plotly==5.18.0
 openpyxl==3.1.2
-PyQt5==5.15.10 
 gunicorn

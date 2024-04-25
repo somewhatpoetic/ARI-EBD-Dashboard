@@ -91,6 +91,8 @@ layout = html.Div([
                 across the country. In addition, the Antiracism Institute works collaboratively with the Minnesota 
                 State System initiatives and other higher education and K-12 institutions in Minnesota and across 
                 the country to promote antiracist work.
+
+                The idea and concept of this dashboard was concieved by Dr. Ibrahim Soumare, and was implemented by Nazimuddin Shaikh. 
                 """
             ),
             # html.Br(),

@@ -91,10 +91,24 @@ layout = html.Div([
                 across the country. In addition, the Antiracism Institute works collaboratively with the Minnesota 
                 State System initiatives and other higher education and K-12 institutions in Minnesota and across 
                 the country to promote antiracist work.
-
+                """
+            ),
+            html.Br(),
+            html.P(
+                """
                 The idea and concept of this dashboard was concieved by Dr. Ibrahim Soumare, and was implemented by Nazimuddin Shaikh. 
                 """
             ),
+            html.Br(),
+            html.P(
+                """
+                The Antiracism Institute for Teaching and Research (Antiracism Institute) will be 
+                phased out by the end of Spring 2025. 
+                This app will undergo maintenance through Summer 2025. 
+                The app will be rereleased on the the first day of the week before
+                the start of the Fall 2025 semester.
+                """
+            )
             # html.Br(),
             # html.H4("About the Dashboard"),
             # html.P(

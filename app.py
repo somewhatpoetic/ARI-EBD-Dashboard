@@ -168,4 +168,4 @@ def get_overall_success_rate(data):
 
 # Run the server
 if __name__ == "__main__":
-    app.run_server()
+    app.run()

@@ -96,7 +96,7 @@ layout = html.Div([
             html.Br(),
             html.P(
                 """
-                The idea and concept of this dashboard was concieved by Dr. Ibrahim Soumare, and was implemented by Nazimuddin Shaikh. 
+                This is a proof of concept for  an interactive dashboard to aid in equity and course data analysis. The dashboard was concieved by Dr. Ibrahim Soumare, and was implemented by Nazimuddin Shaikh. 
                 """
             ),
             html.Br(),
@@ -104,9 +104,7 @@ layout = html.Div([
                 """
                 The Antiracism Institute for Teaching and Research (Antiracism Institute) will be 
                 phased out by the end of Spring 2025. 
-                This app will undergo maintenance through Summer 2025. 
-                The app will be rereleased on the the first day of the week before
-                the start of the Fall 2025 semester.
+                This app will undergo maintenance through Summer 2025 and have its first official version released by August 2025.
                 """
             )
             # html.Br(),
